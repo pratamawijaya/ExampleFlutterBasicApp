@@ -100,9 +100,9 @@ class _DogDetailPageState extends State<DogDetailPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: Colors.black87,
+      backgroundColor: Colors.black38,
       appBar: new AppBar(
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.black38,
         title: new Text('Meet ${widget.dog.name}'),
       ),
       body: dogProfile,
