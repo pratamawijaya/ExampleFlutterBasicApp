@@ -52,6 +52,7 @@ class _DogCardState extends State<DogCard> {
       height: 115.0,
       child: new Card(
         color: Colors.black12,
+        margin: const EdgeInsets.only(left: 42.0),
         child: new Padding(
           padding: const EdgeInsets.only(
             top: 8.0,
