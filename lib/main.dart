@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic_dog/components/DogCard.dart';
+import 'package:flutter_basic_dog/model/dog.dart';
 
 void main() => runApp(new MyApp());
 
@@ -23,6 +25,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage>{
+
+  var initalDogs = []
+    ..add(new Dog('Husky', 'Scotland', 'nice dog breeds'));
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -30,7 +36,9 @@ class _HomePageState extends State<HomePage>{
         title: new Text(widget.title),
         backgroundColor: Colors.black38,
       ),
-      body: new Container(),
+      body: new Container(
+        child: new DogCard(initalDogs[0]),
+      ),
     );
   }
 
