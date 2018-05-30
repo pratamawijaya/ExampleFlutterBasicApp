@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic_dog/components/dog_card.dart';
+import 'package:flutter_basic_dog/components/dog_list.dart';
 import 'package:flutter_basic_dog/model/dog.dart';
 
 void main() => runApp(new MyApp());
@@ -24,10 +25,14 @@ class HomePage extends StatefulWidget {
   State<StatefulWidget> createState() => new _HomePageState();
 }
 
-class _HomePageState extends State<HomePage>{
+class _HomePageState extends State<HomePage> {
 
-  var initalDogs = []
-    ..add(new Dog('Husky', 'Scotland', 'nice dog breeds'));
+  List<Dog> initialDogs = []
+    ..add(new Dog('Husky', 'Scotland', 'nice dog breeds'))
+    ..add(new Dog('Rex', 'Dallas, TX, USA', 'nice dog breeds'))
+    ..add(new Dog('Regum', 'Tex, TX, USA', 'nice dog breeds'))
+    ..add(new Dog('Qeon', 'USA, TX, USA', 'nice dog breeds'))
+    ..add(new Dog('Buddy', 'North Pole, Earth', 'nice dog breeds'));
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +42,10 @@ class _HomePageState extends State<HomePage>{
         backgroundColor: Colors.black38,
       ),
       body: new Container(
-        child: new DogCard(initalDogs[0]),
+        child: new Center(
+          child: new DogList(initialDogs),
+        ),
       ),
     );
   }
-
 }
