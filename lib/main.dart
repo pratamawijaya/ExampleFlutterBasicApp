@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic_dog/components/DogCard.dart';
+import 'package:flutter_basic_dog/components/dog_card.dart';
 import 'package:flutter_basic_dog/model/dog.dart';
 
 void main() => runApp(new MyApp());
