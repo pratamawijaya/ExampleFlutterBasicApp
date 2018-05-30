@@ -8,7 +8,6 @@ class DogCard extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() => new _DogCardState(dog);
-  
 }
 
 class _DogCardState extends State<DogCard> {
@@ -21,16 +20,17 @@ class _DogCardState extends State<DogCard> {
 
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      height: 120.0,
-      child: new Stack(
-        children: <Widget>[
-          new Positioned(
-            child: dogImage,
-          )
-        ],
-      ),
-    );
+    return new Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        child: new Container(
+          height: 115.0,
+          child: new Stack(
+            children: <Widget>[
+              dogCard,
+              new Positioned(top: 7.5, child: dogImage)
+            ],
+          ),
+        ));
   }
 
   Widget get dogImage {
@@ -44,6 +44,38 @@ class _DogCardState extends State<DogCard> {
               image: new NetworkImage(renderUrl ?? defaultImage))),
     );
     return dogAvatar;
+  }
+
+  Widget get dogCard {
+    return new Container(
+      width: 290.0,
+      height: 115.0,
+      child: new Card(
+        color: Colors.black12,
+        child: new Padding(
+          padding: const EdgeInsets.only(
+            top: 8.0,
+            bottom: 8.0,
+            left: 64.0,
+          ),
+          child: new Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              new Text(widget.dog.name,
+                  style: Theme.of(context).textTheme.headline),
+              new Text(widget.dog.loc),
+              new Row(
+                children: <Widget>[
+                  new Icon(Icons.star),
+                  new Text(': ${widget.dog.rating}')
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   @override
